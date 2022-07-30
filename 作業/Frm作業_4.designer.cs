@@ -75,7 +75,7 @@ namespace 作業
             this.label3.Location = new System.Drawing.Point(11, 323);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(215, 22);
+            this.label3.Size = new System.Drawing.Size(144, 16);
             this.label3.TabIndex = 134;
             this.label3.Text = "LINQ to Northwind Entity";
             // 
@@ -96,7 +96,7 @@ namespace 作業
             this.label4.Location = new System.Drawing.Point(5, 27);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(145, 22);
+            this.label4.Size = new System.Drawing.Size(98, 16);
             this.label4.TabIndex = 126;
             this.label4.Text = "LINQ - GroupBy";
             // 
@@ -111,6 +111,7 @@ namespace 作業
             this.button4.TabIndex = 85;
             this.button4.Text = "int[]  分三群 - No LINQ";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button9
             // 
@@ -151,7 +152,7 @@ namespace 作業
             this.label1.Location = new System.Drawing.Point(12, 151);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 22);
+            this.label1.Size = new System.Drawing.Size(103, 16);
             this.label1.TabIndex = 128;
             this.label1.Text = "LINQ to FileInfo[]";
             // 
@@ -166,6 +167,7 @@ namespace 作業
             this.button6.TabIndex = 93;
             this.button6.Text = "  依 年 分組檔案 (大=>小)";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button8
             // 
@@ -190,6 +192,7 @@ namespace 作業
             this.button38.TabIndex = 95;
             this.button38.Text = "依 檔案大小 分組檔案 (大=>小)";
             this.button38.UseVisualStyleBackColor = false;
+            this.button38.Click += new System.EventHandler(this.button38_Click);
             // 
             // button1
             // 
@@ -216,10 +219,10 @@ namespace 作業
             // treeView1
             // 
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.Location = new System.Drawing.Point(5, 298);
+            this.treeView1.Location = new System.Drawing.Point(5, 295);
             this.treeView1.Margin = new System.Windows.Forms.Padding(5);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(970, 283);
+            this.treeView1.Size = new System.Drawing.Size(868, 280);
             this.treeView1.TabIndex = 130;
             // 
             // lblMaster
@@ -231,7 +234,7 @@ namespace 作業
             this.lblMaster.Location = new System.Drawing.Point(5, 0);
             this.lblMaster.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblMaster.Name = "lblMaster";
-            this.lblMaster.Size = new System.Drawing.Size(392, 49);
+            this.lblMaster.Size = new System.Drawing.Size(349, 49);
             this.lblMaster.TabIndex = 101;
             this.lblMaster.Text = "Master";
             // 
@@ -244,7 +247,7 @@ namespace 作業
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(390, 218);
+            this.dataGridView1.Size = new System.Drawing.Size(347, 215);
             this.dataGridView1.TabIndex = 71;
             // 
             // tableLayoutPanel1
@@ -260,7 +263,7 @@ namespace 作業
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(402, 279);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(359, 276);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // splitContainer2
@@ -278,8 +281,8 @@ namespace 作業
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.tableLayoutPanel2);
-            this.splitContainer2.Size = new System.Drawing.Size(970, 283);
-            this.splitContainer2.SplitterDistance = 406;
+            this.splitContainer2.Size = new System.Drawing.Size(868, 280);
+            this.splitContainer2.SplitterDistance = 363;
             this.splitContainer2.SplitterWidth = 6;
             this.splitContainer2.TabIndex = 131;
             // 
@@ -296,7 +299,7 @@ namespace 作業
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(554, 279);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(495, 276);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // lblDetails
@@ -308,7 +311,7 @@ namespace 作業
             this.lblDetails.Location = new System.Drawing.Point(5, 0);
             this.lblDetails.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblDetails.Name = "lblDetails";
-            this.lblDetails.Size = new System.Drawing.Size(544, 49);
+            this.lblDetails.Size = new System.Drawing.Size(485, 49);
             this.lblDetails.TabIndex = 102;
             this.lblDetails.Text = "Details";
             // 
@@ -321,7 +324,7 @@ namespace 作業
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(542, 218);
+            this.dataGridView2.Size = new System.Drawing.Size(483, 215);
             this.dataGridView2.TabIndex = 100;
             // 
             // tableLayoutPanel4
@@ -338,7 +341,7 @@ namespace 作業
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(980, 880);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(878, 871);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -354,7 +357,7 @@ namespace 作業
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1706, 890);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1604, 881);
             this.tableLayoutPanel3.TabIndex = 134;
             // 
             // panel1
@@ -379,7 +382,7 @@ namespace 作業
             this.panel1.Location = new System.Drawing.Point(5, 5);
             this.panel1.Margin = new System.Windows.Forms.Padding(5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(706, 880);
+            this.panel1.Size = new System.Drawing.Size(706, 871);
             this.panel1.TabIndex = 1;
             // 
             // button5
@@ -417,9 +420,9 @@ namespace 作業
             // 
             // Frm作業_4
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1706, 890);
+            this.ClientSize = new System.Drawing.Size(1604, 881);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);

@@ -19,17 +19,23 @@ namespace 作業
 
             students_scores = new List<Student>()
                                          {
-                                            new Student{ Name = "Mark", Class = "CS_101", Java = 60, Csharp = 60, Linq = 50, Gender = "Male" },
-                                            new Student{ Name = "Dio", Class = "CS_102", Java = 20, Csharp = 75, Linq = 100, Gender = "Male" },
-                                            new Student{ Name = "Jojo", Class = "CS_101", Java = 70, Csharp = 50, Linq = 75, Gender = "Female" },
-                                            new Student{ Name = "Lita", Class = "CS_102", Java = 90, Csharp = 30, Linq = 85, Gender = "Female" },
-                                            new Student{ Name = "Tracy", Class = "CS_101", Java = 40, Csharp = 90, Linq = 90, Gender = "Female" },
-                                            new Student{ Name = "Henry", Class = "CS_102", Java = 85, Csharp = 40, Linq = 70, Gender = "Male" },
+                                            new Student{ Name = "Mark", Java = R.Next(0,100), Csharp =R.Next(0,100), Linq = R.Next(0,100) },
+                                            new Student{ Name = "Dio", Java = R.Next(0,100), Csharp = R.Next(0,100), Linq =  R.Next(0,100)},
+                                            new Student{ Name = "Jojo", Java =  R.Next(0,100), Csharp =  R.Next(0,100), Linq =  R.Next(0,100) },
+                                            new Student{ Name = "Lita", Java =  R.Next(0,100), Csharp = R.Next(0,100), Linq = R.Next(0,100)},
+                                            new Student{ Name = "Henry", Java =  R.Next(0,100), Csharp =  R.Next(0,100), Linq =  R.Next(0,100)},
 
                                           };
+            subject = new List<科目成績>()
+            {
+                new 科目成績{Name="Jave"},
+                new 科目成績{Name="Csharp"},
+                new 科目成績{Name="Linq"}
+            };
         }
         List<Student> students_scores;
-
+        List<科目成績> subject;
+        Random R = new Random();
         public class Student
         {
             public string Name { get; set; }
@@ -41,19 +47,38 @@ namespace 作業
 
             
         }
-           string[] 科目 = { "Java", "Csharp", "Linq" };
-        
+        public class 科目成績
+        {
+            public string Name { get; set; }
+        }  
+        string[] 科目 = { "Java", "Csharp", "Linq" };
+
+
         private void button36_Click(object sender, EventArgs e)
-        { 
+        {
             學生圖表.Series.Clear();
             string s = cbbox.Text;
-            學生圖表.DataSource = students_scores;
-            學生圖表.Series.Add(s);
-            學生圖表.Series[0].XValueMember = "Name";
-            學生圖表.Series[0].YValueMembers = s;
-            學生圖表.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
-            學生圖表.Series[0].BorderWidth = 3;
-            學生圖表.ChartAreas[0].AxisY.Maximum = 100;
+            var q = from p in students_scores
+                    select new
+                    {
+                        Name = p.Name,
+                        Java=p.Java,
+                        Csharp=p.Csharp,
+                        Linq=p.Linq,
+                        平均成績 =new[] { p.Csharp, p.Java, p.Linq }.Average(),
+                        總分 = new[] { p.Java, p.Linq, p.Csharp }.Sum(),
+                    };
+ 
+                學生圖表.DataSource = q.ToList();
+                學生圖表.Series.Add(s);
+
+                學生圖表.Series[0].XValueMember = "Name";
+                學生圖表.Series[0].YValueMembers = s;
+                學生圖表.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+                學生圖表.Series[0].BorderWidth = 3;
+                學生圖表.ChartAreas[0].AxisY.Maximum = 300;
+            
+
 
         }
         private void button33_Click(object sender, EventArgs e)
@@ -74,14 +99,34 @@ namespace 作業
 
         private void button37_Click(object sender, EventArgs e)
         {
-            string n = studentname.Text;
+            //學生圖表.Series.Clear();
+            //string n = studentname.Text;
+            //var q = from s in students_scores join y in subject
+            //        on y.Name equals s.Name
+            //        where s.Name == n
+            //        select new
+            //        {
+            //          y.Name,
+            //          分數=s
+
+            //        }
+            //        ;
+            //學生圖表.DataSource = q.ToList();
+            //學生圖表.Series.Add(n);
+            //學生圖表.Series[0].XValueMember = "成績名稱";
+            //學生圖表.Series[0].YValueMembers = "分數";
+            //學生圖表.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+            //學生圖表.Series[0].BorderWidth = 3;
+            //學生圖表.ChartAreas[0].AxisY.Maximum = 100;
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             學生圖表.Series.Clear();
-            學生圖表.DataSource = students_scores;
+            var q =from s in students_scores
+                   select s;
+            學生圖表.DataSource =q.ToList();
 
             for (int i = 0; i < 科目.Length; i++)
             {

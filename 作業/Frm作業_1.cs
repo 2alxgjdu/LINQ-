@@ -245,15 +245,15 @@ namespace 作業
         {
             
             string a = studentname.Text;
-            var q = students_scores.Where(n => n.Name == a).Select(n=>new { 
-                                姓名=n.Name,
-                                Java成績=n.Java,
-                                Csharp成績=n.Csharp,
-                                Linq成績=n.Linq,
-                                總成績=n.Java+n.Csharp+n.Linq,
-                                平均= (n.Java + n.Csharp + n.Linq )/ 3,
-                                最高分=Max(n.Java,n.Csharp,n.Linq),
-                                最小值=Min(n.Java,n.Csharp,n.Linq)
+            var q = students_scores.Where(n => n.Name == a).Select(n=>new {
+                姓名 = n.Name,
+                Java成績 = n.Java,
+                Csharp成績 = n.Csharp,
+                Linq成績 = n.Linq,
+                總成績 =new[] { n.Java , n.Csharp ,n.Linq }.Sum(),
+                平均 = new[] { n.Java ,n.Csharp , n.Linq }.Average(),
+                最高分 = new[] { n.Java, n.Csharp, n.Linq }.Max(),
+                最低分= new[]{n.Java, n.Csharp, n.Linq}.Min()
                                 
             });
             dataGridView2.DataSource = q.ToList();

@@ -29,13 +29,13 @@ namespace 作業
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title7 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title8 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.button36 = new System.Windows.Forms.Button();
             this.button37 = new System.Windows.Forms.Button();
             this.button33 = new System.Windows.Forms.Button();
@@ -87,27 +87,27 @@ namespace 作業
             // 
             // 學生圖表
             // 
-            chartArea2.Name = "ChartArea1";
-            this.學生圖表.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.學生圖表.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.學生圖表.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.學生圖表.Legends.Add(legend1);
             this.學生圖表.Location = new System.Drawing.Point(371, 36);
             this.學生圖表.Name = "學生圖表";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.學生圖表.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.學生圖表.Series.Add(series1);
             this.學生圖表.Size = new System.Drawing.Size(354, 334);
             this.學生圖表.TabIndex = 150;
             this.學生圖表.Text = "chart1";
-            title5.Name = "5";
-            title6.Name = "6";
-            title7.Name = "Title1";
-            title8.Name = "Title2";
-            this.學生圖表.Titles.Add(title5);
-            this.學生圖表.Titles.Add(title6);
-            this.學生圖表.Titles.Add(title7);
-            this.學生圖表.Titles.Add(title8);
+            title1.Name = "5";
+            title2.Name = "6";
+            title3.Name = "Title1";
+            title4.Name = "Title2";
+            this.學生圖表.Titles.Add(title1);
+            this.學生圖表.Titles.Add(title2);
+            this.學生圖表.Titles.Add(title3);
+            this.學生圖表.Titles.Add(title4);
             // 
             // cbbox
             // 
@@ -119,6 +119,7 @@ namespace 作業
             this.cbbox.Name = "cbbox";
             this.cbbox.Size = new System.Drawing.Size(176, 21);
             this.cbbox.TabIndex = 153;
+            this.cbbox.Text = "Java";
             // 
             // label9
             // 
