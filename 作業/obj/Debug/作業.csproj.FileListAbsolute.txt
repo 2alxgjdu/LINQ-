@@ -43,3 +43,4 @@ C:\Users\Student\Downloads\2022731LINQ作業\LINQ作業\作業\bin\Debug\EntityF
 C:\Users\Student\Downloads\2022731LINQ作業\LINQ作業\作業\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Student\Downloads\2022731LINQ作業\LINQ作業\作業\bin\Debug\zh-Hant\EntityFramework.resources.dll
 C:\Users\Student\Downloads\2022731LINQ作業\LINQ作業\作業\obj\Debug\作業.csproj.CopyComplete
+C:\Users\Student\Downloads\2022731LINQ作業\LINQ作業\作業\obj\Debug\作業.主畫面.resources

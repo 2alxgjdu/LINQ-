@@ -266,7 +266,6 @@ namespace 作業
                         年份2= g.Key+1,
                         銷售額2 = g.Sum(p => p.Quantity * p.UnitPrice * Convert.ToDecimal(1 - p.Discount))
                     };
-
             var x = from p in q
                     join i in q2
                     on p.年份1 equals i.年份2
@@ -276,9 +275,6 @@ namespace 作業
                        銷售額=p.銷售額1,
                        該年份銷售成長率=(p.銷售額1-i.銷售額2)/p.銷售額1               
                     };
-
-
-
             dataGridView1.DataSource = x.ToList();
             dataGridView2.DataSource = q.ToList();
             chart1.DataSource = x.ToList();
@@ -300,20 +296,52 @@ namespace 作業
 
         private void button34_Click(object sender, EventArgs e)
         {
-            var q = from p in dbContext.Order_Details.AsEnumerable()
-                    group p by p.Order.OrderDate.Value.Year into g
+            if (CBX.Text == "") return;
+            var q = from a in dbContext.Order_Details
+                    join b in dbContext.Orders
+                    on a.OrderID equals b.OrderID
+                    join c in dbContext.Products
+                    on a.ProductID equals c.ProductID
+                    join d in dbContext.Categories
+                    on c.CategoryID equals d.CategoryID
+                    where b.RequiredDate.Value.Year.ToString() == CBX.Text
+                    group a by d.CategoryName into g
                     select new
                     {
-                        年份 = g.Key,
-                        銷售額 = g.Sum(p => p.Quantity * p.UnitPrice * Convert.ToDecimal(1 - p.Discount))
+                        g.Key,
+                        sum = g.Sum(i => i.Quantity)
                     };
-
-            dataGridView2.DataSource = q.ToList();
-            chart1.DataSource = q.ToList();
-            chart1.Series[0].XValueMember = "年份";
-            chart1.Series[0].YValueMembers = " 銷售額";
+            var r = from p in dbContext.Products
+                    join od in dbContext.Order_Details
+                    on p.ProductID equals od.ProductID
+                    join o in dbContext.Orders
+                    on od.OrderID equals o.OrderID
+                    join c in dbContext.Categories
+                    on p.CategoryID equals c.CategoryID
+                    join g in q
+                    on c.CategoryName equals g.Key
+                    where o.RequiredDate.Value.Year.ToString() == CBX.Text
+                    select new
+                    {
+                        銷售額=g.sum,
+                        p.Category.CategoryName
+                    };
+            dataGridView1.DataSource = r.OrderByDescending(i => i.CategoryName).Distinct().ToList();
+            chart1.DataSource = r.ToList().Distinct();
+            chart1.Series[0].XValueMember = "CategoryName";
+            chart1.Series[0].YValueMembers = "銷售額";
             chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
             chart1.Series[0].BorderWidth = 3;
+
+
+
+        }
+
+        private void Frm作業_4_Load(object sender, EventArgs e)
+        {
+            var q2 = from x in dataSet11.Orders
+                     select x.OrderDate.Year;
+            foreach (var j in q2.Distinct()) CBX.Items.Add(j);
         }
     } 
 }
