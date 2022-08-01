@@ -29,13 +29,13 @@ namespace 作業
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title9 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title11 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title12 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.button36 = new System.Windows.Forms.Button();
             this.button37 = new System.Windows.Forms.Button();
             this.button33 = new System.Windows.Forms.Button();
@@ -49,8 +49,12 @@ namespace 作業
             this.studentname = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.學生圖表)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button36
@@ -87,34 +91,34 @@ namespace 作業
             // 
             // 學生圖表
             // 
-            chartArea1.Name = "ChartArea1";
-            this.學生圖表.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.學生圖表.Legends.Add(legend1);
-            this.學生圖表.Location = new System.Drawing.Point(371, 36);
+            chartArea3.Name = "ChartArea1";
+            this.學生圖表.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.學生圖表.Legends.Add(legend3);
+            this.學生圖表.Location = new System.Drawing.Point(355, 12);
             this.學生圖表.Name = "學生圖表";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.學生圖表.Series.Add(series1);
-            this.學生圖表.Size = new System.Drawing.Size(354, 334);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.學生圖表.Series.Add(series3);
+            this.學生圖表.Size = new System.Drawing.Size(433, 300);
             this.學生圖表.TabIndex = 150;
             this.學生圖表.Text = "chart1";
-            title1.Name = "5";
-            title2.Name = "6";
-            title3.Name = "Title1";
-            title4.Name = "Title2";
-            this.學生圖表.Titles.Add(title1);
-            this.學生圖表.Titles.Add(title2);
-            this.學生圖表.Titles.Add(title3);
-            this.學生圖表.Titles.Add(title4);
+            title9.Name = "5";
+            title10.Name = "6";
+            title11.Name = "Title1";
+            title12.Name = "Title2";
+            this.學生圖表.Titles.Add(title9);
+            this.學生圖表.Titles.Add(title10);
+            this.學生圖表.Titles.Add(title11);
+            this.學生圖表.Titles.Add(title12);
             // 
             // cbbox
             // 
             this.cbbox.Font = new System.Drawing.Font("新細明體", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cbbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.cbbox.FormattingEnabled = true;
-            this.cbbox.Location = new System.Drawing.Point(100, 170);
+            this.cbbox.Location = new System.Drawing.Point(100, 174);
             this.cbbox.Margin = new System.Windows.Forms.Padding(4);
             this.cbbox.Name = "cbbox";
             this.cbbox.Size = new System.Drawing.Size(176, 21);
@@ -126,7 +130,7 @@ namespace 作業
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("新細明體", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label9.Location = new System.Drawing.Point(36, 170);
+            this.label9.Location = new System.Drawing.Point(36, 177);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(42, 14);
@@ -189,11 +193,47 @@ namespace 作業
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(355, 334);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(433, 104);
+            this.dataGridView1.TabIndex = 158;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("新細明體", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(97, 399);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(176, 21);
+            this.comboBox1.TabIndex = 159;
+            this.comboBox1.Text = "Java";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("新細明體", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(36, 406);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 14);
+            this.label1.TabIndex = 160;
+            this.label1.Text = "選項:";
+            // 
             // Frm作業_3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.studentname);
             this.Controls.Add(this.label7);
@@ -208,6 +248,7 @@ namespace 作業
             this.Load += new System.EventHandler(this.Frm作業_3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.學生圖表)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,5 +269,8 @@ namespace 作業
         private System.Windows.Forms.ComboBox studentname;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

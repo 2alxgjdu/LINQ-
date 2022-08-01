@@ -29,6 +29,11 @@ namespace 作業
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label3 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -56,6 +61,11 @@ namespace 作業
             this.button5 = new System.Windows.Forms.Button();
             this.button34 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.productsTableAdapter1 = new 作業.DataSet1TableAdapters.ProductsTableAdapter();
+            this.dataSet11 = new 作業.DataSet1();
+            this.ordersTableAdapter1 = new 作業.DataSet1TableAdapters.OrdersTableAdapter();
+            this.order_DetailsTableAdapter1 = new 作業.DataSet1TableAdapters.Order_DetailsTableAdapter();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -67,6 +77,8 @@ namespace 作業
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -75,7 +87,7 @@ namespace 作業
             this.label3.Location = new System.Drawing.Point(11, 323);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(144, 16);
+            this.label3.Size = new System.Drawing.Size(163, 15);
             this.label3.TabIndex = 134;
             this.label3.Text = "LINQ to Northwind Entity";
             // 
@@ -89,6 +101,7 @@ namespace 作業
             this.button10.TabIndex = 133;
             this.button10.Text = " Orders -  Group by 年 / 月";
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // label4
             // 
@@ -96,7 +109,7 @@ namespace 作業
             this.label4.Location = new System.Drawing.Point(5, 27);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 16);
+            this.label4.Size = new System.Drawing.Size(106, 15);
             this.label4.TabIndex = 126;
             this.label4.Text = "LINQ - GroupBy";
             // 
@@ -123,6 +136,7 @@ namespace 作業
             this.button9.TabIndex = 91;
             this.button9.Text = "     NW 產品最高單價前 5 筆 (包括類別名稱)";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button2
             // 
@@ -134,6 +148,7 @@ namespace 作業
             this.button2.TabIndex = 129;
             this.button2.Text = "總銷售金額";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button7
             // 
@@ -152,7 +167,7 @@ namespace 作業
             this.label1.Location = new System.Drawing.Point(12, 151);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 16);
+            this.label1.Size = new System.Drawing.Size(115, 15);
             this.label1.TabIndex = 128;
             this.label1.Text = "LINQ to FileInfo[]";
             // 
@@ -180,6 +195,7 @@ namespace 作業
             this.button8.TabIndex = 94;
             this.button8.Text = "NW Products 低中高 價產品 ";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button38
             // 
@@ -204,6 +220,7 @@ namespace 作業
             this.button1.TabIndex = 125;
             this.button1.Text = "銷售最好的top 5業務員";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button15
             // 
@@ -215,6 +232,7 @@ namespace 作業
             this.button15.TabIndex = 121;
             this.button15.Text = " Orders -  Group by 年";
             this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // treeView1
             // 
@@ -333,6 +351,7 @@ namespace 作業
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Controls.Add(this.splitContainer2, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.treeView1, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.chart1, 0, 2);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(721, 5);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(5);
@@ -395,6 +414,7 @@ namespace 作業
             this.button5.TabIndex = 139;
             this.button5.Text = "年 銷售成長率";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button34
             // 
@@ -406,6 +426,7 @@ namespace 作業
             this.button34.TabIndex = 140;
             this.button34.Text = "每年 銷售分析 &&　plot";
             this.button34.UseVisualStyleBackColor = false;
+            this.button34.Click += new System.EventHandler(this.button34_Click);
             // 
             // button3
             // 
@@ -417,14 +438,57 @@ namespace 作業
             this.button3.TabIndex = 135;
             this.button3.Text = "     NW 產品有任何一筆單價大於300 ?";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // productsTableAdapter1
+            // 
+            this.productsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // dataSet11
+            // 
+            this.dataSet11.DataSetName = "DataSet1";
+            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ordersTableAdapter1
+            // 
+            this.ordersTableAdapter1.ClearBeforeFill = true;
+            // 
+            // order_DetailsTableAdapter1
+            // 
+            this.order_DetailsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Top;
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(3, 583);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "1996";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "1997";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "1998";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Series.Add(series3);
+            this.chart1.Size = new System.Drawing.Size(872, 285);
+            this.chart1.TabIndex = 132;
+            this.chart1.Text = "chart1";
             // 
             // Frm作業_4
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1604, 881);
             this.Controls.Add(this.tableLayoutPanel3);
-            this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Frm作業_4";
             this.Text = "Frm作業_4";
@@ -440,6 +504,8 @@ namespace 作業
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -473,5 +539,10 @@ namespace 作業
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button34;
+        private DataSet1TableAdapters.ProductsTableAdapter productsTableAdapter1;
+        private DataSet1 dataSet11;
+        private DataSet1TableAdapters.OrdersTableAdapter ordersTableAdapter1;
+        private DataSet1TableAdapters.Order_DetailsTableAdapter order_DetailsTableAdapter1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }

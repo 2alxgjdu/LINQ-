@@ -71,19 +71,65 @@ namespace 作業
  
                 學生圖表.DataSource = q.ToList();
                 學生圖表.Series.Add(s);
-
                 學生圖表.Series[0].XValueMember = "Name";
                 學生圖表.Series[0].YValueMembers = s;
                 學生圖表.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
                 學生圖表.Series[0].BorderWidth = 3;
-                學生圖表.ChartAreas[0].AxisY.Maximum = 300;
-            
-
-
+                學生圖表.ChartAreas[0].AxisY.Maximum = 300;          
         }
         private void button33_Click(object sender, EventArgs e)
         {
             // split=> 數學成績 分成 三群 '待加強'(60~69) '佳'(70~89) '優良'(90~100) 
+            string s = comboBox1.Text;
+            if (s == "Java")
+            {
+                var q = from p in students_scores
+                        group p by 成績優劣(p.Java) into g
+                        select new
+                        {
+                            區分 = g.Key,
+                            人數 = g.Count()
+                        };
+                dataGridView1.DataSource = q.ToList();
+                學生圖表.DataSource = q.ToList();
+                學生圖表.Series[0].XValueMember = "區分";
+                學生圖表.Series[0].YValueMembers = "人數";
+                學生圖表.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+                學生圖表.Series[0].BorderWidth = 3;
+            }
+            else if (s == "Csharp")
+            {
+                var q = from p in students_scores
+                        group p by 成績優劣(p.Csharp) into g
+                        select new
+                        {
+                            區分 = g.Key,
+                            人數 = g.Count()
+                        };
+                dataGridView1.DataSource = q.ToList();
+                學生圖表.DataSource = q.ToList();
+                學生圖表.Series[0].XValueMember = "區分";
+                學生圖表.Series[0].YValueMembers = "人數";
+                學生圖表.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+                學生圖表.Series[0].BorderWidth = 3;
+            }
+            else if (s == "Linq")
+            {
+                var q = from p in students_scores
+                        group p by 成績優劣(p.Linq) into g
+                        select new
+                        {
+                            區分 = g.Key,
+                            人數 = g.Count()
+                        };
+                dataGridView1.DataSource = q.ToList();
+                學生圖表.DataSource = q.ToList();
+                學生圖表.Series[0].XValueMember = "區分";
+                學生圖表.Series[0].YValueMembers = "人數";
+                學生圖表.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+                學生圖表.Series[0].BorderWidth = 3;
+            }
+
         }
 
         private void Frm作業_3_Load(object sender, EventArgs e)
@@ -93,39 +139,32 @@ namespace 作業
             var q = from n in students_scores
                     select n.Name;
             foreach (string i in q) studentname.Items.Add(i);
-
-
+            string[] ss = { "Java", "Csharp", "Linq" };
+            foreach (string xx in ss) comboBox1.Items.Add(xx);
         }
-
         private void button37_Click(object sender, EventArgs e)
         {
-            //學生圖表.Series.Clear();
-            //string n = studentname.Text;
-            //var q = from s in students_scores join y in subject
-            //        on y.Name equals s.Name
-            //        where s.Name == n
-            //        select new
-            //        {
-            //          y.Name,
-            //          分數=s
 
-            //        }
-            //        ;
-            //學生圖表.DataSource = q.ToList();
-            //學生圖表.Series.Add(n);
-            //學生圖表.Series[0].XValueMember = "成績名稱";
-            //學生圖表.Series[0].YValueMembers = "分數";
-            //學生圖表.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
-            //學生圖表.Series[0].BorderWidth = 3;
-            //學生圖表.ChartAreas[0].AxisY.Maximum = 100;
-
+            學生圖表.ChartAreas.Clear();
+            學生圖表.ChartAreas.Add("FirstChart");
+            學生圖表.Series.Clear();
+            if (studentname.Text == "") return;
+            string s = studentname.Text;
+            學生圖表.Series.Add(s);
+            var q = students_scores.Where(i => i.Name == s).Select(i => new { i.Java, i.Csharp, i.Linq });
+            foreach(var r in q)
+            {
+                學生圖表.Series[0].Points.AddXY("Java", r.Java);
+                學生圖表.Series[0].Points.AddXY("Linq", r.Linq);
+                學生圖表.Series[0].Points.AddXY("Csharp", r.Csharp);
+            }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             學生圖表.Series.Clear();
             var q =from s in students_scores
                    select s;
+         
             學生圖表.DataSource =q.ToList();
 
             for (int i = 0; i < 科目.Length; i++)
@@ -137,6 +176,16 @@ namespace 作業
                 學生圖表.Series[i].BorderWidth = 3;
             }
             學生圖表.ChartAreas[0].AxisY.Maximum = 100;
+        }
+        string 成績優劣(int x)
+        {
+            string i;
+            if (x >= 90 && x <= 100)
+                i = "優等生";
+            else if (x >= 60 && x <= 89)
+                i = "普等生";
+            else { i = "劣等生"; }
+            return i;
         }
     }
 }

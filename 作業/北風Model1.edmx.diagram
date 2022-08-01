@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1d97ddbc75764a98b01ae6527a126790" Name="Diagram1">
+        <EntityTypeShape EntityType="NorthwindModel.Order_Detail" Width="1.5" PointX="2.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.Order" Width="1.5" PointX="0.625" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.Product" Width="1.5" PointX="4.75" PointY="2.625" IsExpanded="true" />
+        <AssociationConnector Association="NorthwindModel.FK_Order_Details_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="NorthwindModel.FK_Order_Details_Products" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="NorthwindModel.Category" Width="1.5" PointX="7.25" PointY="3" />
+        <AssociationConnector Association="NorthwindModel.FK_Products_Categories" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
